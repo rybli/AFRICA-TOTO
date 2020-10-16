@@ -4,7 +4,7 @@ import numpy
 import glob
 import os
 from PIL import Image, ImageDraw
-from multiprocessing import Queue
+from multiprocessing import Process, Queue
 import time
 
 
@@ -29,7 +29,6 @@ def extract_images(videosrc, imagedest, timeint=1):
 
 
 def create_queue(imagedest):
-    q = Queue()
     for image in sorted(glob.glob(imagedest + "\\*"), key=os.path.getmtime):
         q.put(image)
     return q
@@ -81,10 +80,11 @@ if __name__ == '__main__':
     a.add_argument("--no-clean-up", help="removes all captured frames to save space. default 'yes'",
                    action="store_false")
     args = a.parse_args()
+    q = Queue()
     if not args.time_interval:
         s = time.perf_counter()
         extract_images(args.path_in, args.path_out)
-        get_color(create_queue(args.path_out))
+        p = Process(target=get_color, args=(q,))
         create_final_image(get_color(create_queue(args.path_out)), args.img_height)
         clean_up(args.path_out)
         e = time.perf_counter() - s
@@ -92,7 +92,7 @@ if __name__ == '__main__':
     else:
         s = time.perf_counter()
         extract_images(args.path_in, args.path_out, args.time_interval)
-        get_color(create_queue(args.path_out))
+        p = Process(target=get_color, args=(q,))
         create_final_image(get_color(create_queue(args.path_out)), args.img_height)
         clean_up(args.path_out)
         e = time.perf_counter() - s
