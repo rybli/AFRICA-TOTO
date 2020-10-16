@@ -15,7 +15,7 @@ Install Requirements:
 pip install -r requirements.txt
 
 Run Script:
-python script.py --path-in PATH/TO/VIDEO --path-out PATH/TO/DROP/FRAMES
+python africa-toto.py --path-in PATH/TO/VIDEO --path-out PATH/TO/DROP/FRAMES
 
 Required Flags:
 --path-in [str]        : OS Path to source video
@@ -30,7 +30,7 @@ Optional Flags:
 ### Example Output
 Using Big Buck Bunny with resolution of 720p. Frame extracted every 1 second.
 ```python
-python script.py --path-in --path-out --time-interval 1
+python africa-toto.py --path-in --path-out --time-interval 1
 
 
 Output:
@@ -48,7 +48,7 @@ Executed in 68.90 seconds.
 ```
 
 
-![Big Buck Bunny](https://github.com/rybli/REPO-NAME/blob/master/big_buck_bunny_avgcolor_spectrum.PNG)
+![Big Buck Bunny](https://github.com/rybli/AFRICA-TOTO/blob/master/big_buck_bunny_avgcolor_spectrum.PNG)
 
 
 
