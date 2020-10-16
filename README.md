@@ -48,8 +48,7 @@ Executed in 68.90 seconds.
 ```
 
 
-![Big Buck Bunny](https://github.com/rybli/AFRICA-TOTO/blob/master/big_buck_bunny_avgcolor_spectrum.PNG)
-
+![Big Buck Bunny](https://github.com/rybli/AFRICA-TOTO/blob/main/big_buck_bunny_avgcolor_spectrum.PNG?raw=true)
 
 
 ### Notes
