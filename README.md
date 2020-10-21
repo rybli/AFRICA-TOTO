@@ -10,7 +10,7 @@ After seeing many ads on Instagram for [Frome](https://frome.co) I decided to ma
 - Total execution time
 
 ### Usage
-```python
+```
 Install Requirements:
 pip install -r requirements.txt
 
@@ -29,7 +29,7 @@ Optional Flags:
 
 ### Example Output
 Using Big Buck Bunny with resolution of 720p. Frame extracted every 1 second.
-```python
+```
 python africa-toto.py --path-in --path-out --time-interval 1
 
 
